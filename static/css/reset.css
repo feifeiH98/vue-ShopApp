@@ -44,8 +44,7 @@ table {
 a {
     color: #7e8c8d;
     text-decoration: none;
-    /* -webkit-backface-visibility: hidden; */
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 li {
 list-style: none;
@@ -57,19 +56,19 @@ height: 5px;
 ::-webkit-scrollbar-track-piece {
 background-color: rgba(0, 0, 0, 0.2);
 /* 此处 */
-border-radius: 6px;
+  -webkit-border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:vertical {
 height: 5px;
 background-color: rgba(125, 125, 125, 0.7);
 /* 此处 */
-border-radius: 6px;
+  -webkit-border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:horizontal {
 width: 5px;
 background-color: rgba(125, 125, 125, 0.7);
 /* 此处 */
-border-radius: 6px;
+  -webkit-border-radius: 6px;
 }
 html, body {
 width: 100%;

@@ -20,6 +20,7 @@
 
 <script>
 import ShopHeader from '../../components/ShopHeader/ShopHeader'
+// 测试
 export default {
     mounted(){
         this.$store.dispatch('getShopInfo');
