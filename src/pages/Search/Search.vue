@@ -5,7 +5,7 @@
       <input type="search" placeholder="请输入商家名称" class="search_input" v-model="keyword" />
       <input type="submit" class="search_submit" />
     </form>
-    <section class="list">
+    <section class="list" v-if="!noSearch">
       <ul class="list_container">
           <router-link to="{path:'/shop',query:{id:item.id}}" v-for="(item) in searchShops"
           :key="item.id" tag="li" class="list_li" >
@@ -27,7 +27,7 @@
           </router-link>    
       </ul>
     </section>
-    <div class="search_none" v-if="noSearch">很抱歉！无搜索结果</div>
+    <div class="search_none" v-else>很抱歉！无搜索结果</div>
   </section>
 </template>
 
@@ -48,7 +48,7 @@ export default {
       const keyword=this.keyword.trim();
       // 进行搜索
       if(keyword){
-        this.noSearch=false;
+        // this.noSearch=false;
         this.$store.dispatch('getSearchShops',keyword);
       }
     }
@@ -57,6 +57,8 @@ export default {
     searchShops(value){
       if(!value.length){
         this.noSearch=true;
+      }else{
+        this.noSearch=false;
       }
     }
   },
